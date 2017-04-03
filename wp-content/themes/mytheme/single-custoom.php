@@ -27,7 +27,13 @@
                                 esc_url( get_permalink() ) ),'</a></h1>' ); ?>
 
                             <div><?php edit_post_link(); ?></div>
-                            <small><?php the_category(' , ');?></small>
+                            <small>
+                                <?php 
+                            
+                            
+                                   $taxonomi= var_dump( wp_get_post_terms($post->ID,'new_taxomony'));
+                                ?>
+                            </small>
                             <br>
                             <small><?php the_tags(); ?></small>
 

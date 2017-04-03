@@ -154,6 +154,23 @@ function myTheme_custom_post_type(){
 add_action('init','myTheme_custom_post_type');
 /**
  *===================================
- * Custome post type
+ * Custome taxonomi
  *===================================
  */
+function myTheme_custom_taxonomy()
+{
+    $labels=[
+      'name'=>'new_taxomonies',
+      'singular_name'=>'new_taxomonies',
+        
+    ];
+    $args = [
+                'hierarchical' => true,
+		'labels' => $labels,
+	
+		'rewrite' => array( 'slug' => 'new_taxomony' )
+	];
+	
+	register_taxonomy('new_taxomony', array('custoom'), $args);
+}
+add_action( 'init' , 'myTheme_custom_taxonomy' );
