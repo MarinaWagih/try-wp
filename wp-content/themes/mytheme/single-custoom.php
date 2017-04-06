@@ -31,7 +31,15 @@
                                 <?php 
                             
                             
-                                   $taxonomi= var_dump( wp_get_post_terms($post->ID,'new_taxomony'));
+                                   $taxonomies= wp_get_post_terms($post->ID,'new_taxomony');
+//                                   print_r($taxonomies);
+                                   $taxonomies_str=  the_terms($post->ID, 'new_taxomony','new_taxomony', ' , ');
+//                                   foreach ($taxonomies as $i=>$taxonomy)
+//                                   {
+////                                        print_r($taxonomy);
+//                                       $taxonomies_str .=$taxonomy->name.($i>0||$i<(count($taxonomies)-1)?' , ':'') ;
+//                                   }
+                                   echo $taxonomies_str;
                                 ?>
                             </small>
                             <br>
